@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -39,13 +40,21 @@ public class PositionController {
     }
 
     @GetMapping(path = "{id}")
-    public PositionDTO getPosition(@PathVariable UUID id) throws Exception {
-        Position position = _positionService.retrievePosition(id);
+    public PositionDTO getPosition(@PathVariable UUID id, @RequestParam(value = "name") String name) throws Exception {
+        try {
+            Position position = _positionService.retrievePosition(id);
         
-        if(position == null)
-            throw new ResourceNotFound("Position Not Found...");
+            if (position == null)
+                throw new ResourceNotFound("Position Not Found...");
 
-        return modelMapper.map(position, PositionDTO.class);
+            if (position.getName().equals(name)) {
+                System.out.println("Equals");
+            }
+            return modelMapper.map(position, PositionDTO.class);
+        }
+        catch (Exception e) {
+            throw new Exception(e.getMessage());
+        }
     }
 
     @PostMapping

@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.cubox.server.biz.log.controller.AccessHistoryControllerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.32 s - in com.cubox.server.biz.log.controller.AccessHistoryControllerTest
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.76 s <<< FAILURE! - in com.cubox.server.biz.log.controller.AccessHistoryControllerTest
+getAccessHistory  Time elapsed: 0.047 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at com.cubox.server.biz.log.controller.AccessHistoryControllerTest.getAccessHistory(AccessHistoryControllerTest.java:45)
+
+getAccessHistoryList  Time elapsed: 0.048 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at com.cubox.server.biz.log.controller.AccessHistoryControllerTest.getAccessHistoryList(AccessHistoryControllerTest.java:35)
+

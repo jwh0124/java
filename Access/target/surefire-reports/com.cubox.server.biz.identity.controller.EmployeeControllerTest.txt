@@ -1,4 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: com.cubox.server.biz.identity.controller.EmployeeControllerTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.484 s - in com.cubox.server.biz.identity.controller.EmployeeControllerTest
+Tests run: 2, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 3.225 s <<< FAILURE! - in com.cubox.server.biz.identity.controller.EmployeeControllerTest
+getEmployee  Time elapsed: 0.131 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at com.cubox.server.biz.identity.controller.EmployeeControllerTest.getEmployee(EmployeeControllerTest.java:43)
+
+getEmployeeList  Time elapsed: 0.048 s  <<< FAILURE!
+java.lang.AssertionError: Status expected:<200> but was:<401>
+	at com.cubox.server.biz.identity.controller.EmployeeControllerTest.getEmployeeList(EmployeeControllerTest.java:34)
+

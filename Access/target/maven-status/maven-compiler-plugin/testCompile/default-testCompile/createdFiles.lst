@@ -1,6 +1,1 @@
-com\cubox\server\biz\log\controller\AccessHistoryControllerTest.class
 com\cubox\server\biz\log\service\AccessHistoryServiceImplTest.class
-com\cubox\server\biz\identity\service\PositionServiceImplTest.class
-com\cubox\server\ServerApplicationTests.class
-com\cubox\server\biz\identity\controller\EmployeeControllerTest.class
-com\cubox\server\biz\identity\service\EmployeeServiceImplTest.class

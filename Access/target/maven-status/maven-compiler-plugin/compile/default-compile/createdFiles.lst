@@ -7,7 +7,6 @@ com\cubox\server\biz\identity\entity\Employee.class
 com\cubox\server\biz\identity\controller\PositionController.class
 com\cubox\server\biz\identity\service\impl\PositionServiceImpl.class
 com\cubox\server\biz\log\service\AccessHistoryService.class
-com\cubox\server\config\JpaAuditingConfiguration.class
 com\cubox\server\biz\identity\model\EmployeeDTO.class
 com\cubox\server\biz\identity\service\PositionService.class
 com\cubox\server\config\WebConfig.class
