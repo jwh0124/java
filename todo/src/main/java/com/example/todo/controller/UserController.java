@@ -32,7 +32,7 @@ public class UserController {
     public ResponseEntity<?> registerUser(@RequestBody UserDTO userDTO){
         try{
             UserEntity user = UserEntity.builder().email(userDTO.getEmail())
-                    .username(userDTO.getUsername()).password(userDTO.getPassword()).build();
+                    .username(userDTO.getUsername()).password(passwordEncoder.encode(userDTO.getPassword()).build();
 
             UserEntity registeredUser = userService.create(user);
             UserDTO responseUserDTO = UserDTO.builder().email(registeredUser.getEmail()).username(registeredUser.getUsername())
