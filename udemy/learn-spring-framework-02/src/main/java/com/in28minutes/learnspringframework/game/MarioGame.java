@@ -1,5 +1,8 @@
 package com.in28minutes.learnspringframework.game;
 
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
 /**
  * PackageName    : com.in28minutes.learnspringframework.game
  * Author         : circle
@@ -8,6 +11,8 @@ package com.in28minutes.learnspringframework.game;
  * Name           : MarioGame
  * Description    :
  */
+@Component
+@Primary
 public class MarioGame implements GamingConsole {
 
 	@Override

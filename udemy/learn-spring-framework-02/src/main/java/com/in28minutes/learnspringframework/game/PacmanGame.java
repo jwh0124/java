@@ -1,5 +1,7 @@
 package com.in28minutes.learnspringframework.game;
 
+import org.springframework.stereotype.Component;
+
 /**
  * PackageName    : com.in28minutes.learnspringframework.game
  * Author         : circle
@@ -8,6 +10,7 @@ package com.in28minutes.learnspringframework.game;
  * Name           : Pacman
  * Description    :
  */
+@Component
 public class PacmanGame implements GamingConsole{
 	@Override
 	public void up() {
