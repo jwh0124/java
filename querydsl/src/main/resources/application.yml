@@ -1,0 +1,33 @@
+spring:
+  profiles:
+    active: local
+  devtools:
+    add-properties: false
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+  flyway:
+    check-location: false
+    enabled: false
+logging:
+  level:
+    root: info
+  file:
+    name: /logs/mp.log
+  logback:
+    rollingpolicy:
+      file-name-pattern: /logs/Log-%d{yyyy-MM-dd}_%i.log
+      max-history: 30
+      max-file-size: 10MB
+      total-size-cap: 10MB
+      clean-history-on-start: true
+  pattern:
+    file: "[%d{HH:mm:ss.SSS}][%-5level][%logger.%method:line%line] - %msg%n"
