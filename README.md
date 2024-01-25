@@ -13,3 +13,7 @@
 - Demo : Spring MVC, JPA, JWT, ModelMapper
 - JUnit
 - JWT
+- QueryDSL
+- Redis
+- Todo
+- Udemy
