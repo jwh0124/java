@@ -1,2 +1,3 @@
-# junit
-JUnit prototype
+# JUnit
+
+- JUnit prototype repository
