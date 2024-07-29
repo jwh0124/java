@@ -8,12 +8,23 @@
 
 ## :rocket: Example
 
-- Access : JPA, ModelMapper, Flyway, JUnit
+- Access
+  - Tech : JPA, ModelMapper, Flyway, JUnit
+  - 출입 통제 시스템 Prototype
 - DateConverter
-- Demo : Spring MVC, JPA, JWT, ModelMapper
+  - DateConvert : LocalDatetime → Timestamp
+- Demo
+  - Tech : Spring MVC, JPA, JWT, ModelMapper
+  - 고객 관리 시스템
 - JUnit
+  - JUnit Prototype
 - JWT
+  - JWT Prototype
 - QueryDSL
+  - QueryDSL Prototype (in Progress)
 - Redis
+  - Redis Prototype (in Progress)
 - Todo
-- Udemy : Spring
+  - Todo Prototype
+- Udemy
+  - Udemy learn project
