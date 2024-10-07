@@ -29,6 +29,6 @@ public class ProductOrderMain {
             totalAmount += order.price * order.quantity;
         }
 
-        System.out.println("총 결제 금액 :" + totalAmount);
+        System.out.println("총 결제 금액 : " + totalAmount);
     }
 }
