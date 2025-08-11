@@ -24,6 +24,9 @@
   - QueryDSL Prototype (in Progress)
 - Redis
   - Redis Prototype (in Progress)
+- SSE
+  - SSE Prototype (in Progress)
+  - Server Side Event
 - Todo
   - Todo Prototype
 - Udemy
