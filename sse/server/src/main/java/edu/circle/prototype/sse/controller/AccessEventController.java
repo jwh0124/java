@@ -6,7 +6,9 @@ import edu.circle.prototype.sse.service.AccessEventService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -19,7 +21,7 @@ import java.util.stream.Collectors;
  * Description    :
  */
 @RestController
-@RequestMapping("/access-events")
+@RequestMapping("/api/access-events")
 public class AccessEventController {
 
 	private AccessEventService accessEventService;
@@ -49,7 +51,19 @@ public class AccessEventController {
 	}
 
 	@PostMapping
-	public void postAccessEvent(@RequestBody AccessEventDto accessEvent) throws Exception {
-		accessEventService.save(modelMapper.map(accessEvent, AccessEvent.class));
+	public void postAccessEvent(@RequestBody AccessEventDto accessEventDto) throws Exception {
+		var accessEvent = modelMapper.map(accessEventDto, AccessEvent.class);
+		accessEventService.save(accessEvent);
+
+		try{
+			SseController.emitter.send(SseEmitter.event().name("access").data(accessEvent));
+		}catch (IOException e) {
+			throw new Exception("Failed to send access event: " + e.getMessage());
+		}
+	}
+
+	@Autowired
+	public void setAccessEventService(AccessEventService accessEventService) {
+		this.accessEventService = accessEventService;
 	}
 }

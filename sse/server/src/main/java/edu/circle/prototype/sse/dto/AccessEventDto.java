@@ -1,7 +1,6 @@
 package edu.circle.prototype.sse.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.*;
 
 import java.time.Instant;
 
@@ -13,14 +12,15 @@ import java.time.Instant;
  * Name           : AccessEventDto
  * Description    :
  */
-@Data
+@NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class AccessEventDto {
 
 	private Long id;
 
 	private String name;
 
-	private Instant occurredAt;
-
+	private Instant occurredAt = Instant.now();
 }

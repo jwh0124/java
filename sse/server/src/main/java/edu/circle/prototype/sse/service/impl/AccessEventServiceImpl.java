@@ -3,8 +3,10 @@ package edu.circle.prototype.sse.service.impl;
 import edu.circle.prototype.sse.domain.AccessEvent;
 import edu.circle.prototype.sse.repository.AccessEventRepository;
 import edu.circle.prototype.sse.service.AccessEventService;
+import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +24,7 @@ public class AccessEventServiceImpl implements AccessEventService {
 
 	private static final Logger LOG = LoggerFactory.getLogger(AccessEventServiceImpl.class);
 
-	private final AccessEventRepository accessEventRepository;
+	private AccessEventRepository accessEventRepository;
 
 	public AccessEventServiceImpl(AccessEventRepository accessEventRepository) {
 		this.accessEventRepository = accessEventRepository;
@@ -45,5 +47,10 @@ public class AccessEventServiceImpl implements AccessEventService {
 		LOG.debug("Request to save AccessEvent: {}", accessEvent);
 
 		return accessEventRepository.save(accessEvent);
+	}
+
+	@Autowired
+	public void setAccessEventRepository(AccessEventRepository accessEventRepository) {
+		this.accessEventRepository = accessEventRepository;
 	}
 }
