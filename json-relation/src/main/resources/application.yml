@@ -1,0 +1,13 @@
+server:
+  port: 15000
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/prototype_json
+    username: postgres
+    password: circle0124
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
