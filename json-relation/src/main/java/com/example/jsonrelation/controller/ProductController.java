@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -22,7 +23,7 @@ public class ProductController {
 
     @GetMapping("/products")
     public ResponseEntity<List<Product>> getAllProducts() {
-        var list = productLoader.getAllProducts().values().stream().collect(Collectors.toList());
+        var list = new ArrayList<>(productLoader.getAllProducts().values());
         return ResponseEntity.ok(list);
     }
 
